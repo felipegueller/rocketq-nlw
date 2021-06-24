@@ -1,0 +1,67 @@
+:root {
+    --dark-blue: #0D114F; /* At black in the Figma */
+    --light-blue: #E0ECFF;
+    --blue: #3485FF;
+
+    --white: #FAFAFA;
+    --red: #E83F5B;
+    --background: #FBFCFF;
+    --overlay: #040911;
+    --icons-details: #A5B0C1;
+
+    --grey-dark: #4D5E77;
+    --grey-light: #E5EAF1;
+    --grey-medium: #D3D9E2;
+    --grey-blue: #A1B2CD;
+
+    --hover-blue: #5699FF;
+    --hover-red: #EA4B65;
+    --hover-grey: #8794A7;
+}
+
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    /* 1rem --- 16px --- 100% */
+    font-size: 62.5%; /* 10px  */
+
+    /* logo se eu preciso de calcular um tamanho de fonte qualquer de px -> rem, basta eu dividir por 10 e não mais por 16. */
+    /* 28px -> 2.8rem // 8px -> 0.8 rem // 49px -> 4.9rem */
+}
+
+body {
+    height: 100vh; /*view height -> ocupa 100% do tamanho da tela (não é indicado para telas com rolagem)*/
+    background-color: var(--background);
+}
+
+body, button, input, textarea {
+    /* clamp -> intervalo de tamanho 
+        1° parâmetro: representa o menor tamanho que o elemento aceita suportar (diminuir).
+        2° parâmetro: representa o tamanho padrão que o elemento vai ser exibido na tela.
+        3° parâmetro: representa o maior tamanho de tela que o elemento aceitara suportar (crescer).
+    
+    */
+    font-size: clamp(14px, 1.6rem, 2vw);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.content { 
+    width: 100%; /* ocupa 100% a largura do elemento pai (body) */
+    margin: 0 auto;
+}
+
+/* classe resposável por ocultar a label, sem fazer com que ela deixe de existir e possa ajudar as pessoas com necessidades especiais a identificar campos de input */
+.sr-only {
+    position: absolute; /* Deixa o elemento livre na tela e permite que possa ser movimentado para onde quiser na tela */
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px; /* faz o elemento subir / se esconder na tela junto as outras regras */
+    overflow: hidden;
+    clip-path: rect( 0, 0, 0, 0); /* Faz o elemento ser posicionado em 0 - top - left - bottom - right*/
+    white-space: nowrap;
+    border-width: 0;
+}
