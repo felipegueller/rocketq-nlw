@@ -1,0 +1,54 @@
+.content {
+    display: grid;
+    grid-template-columns: 60% 40%; /* cria duas colunas com as respsctivas larguras */
+    grid-template-rows: 11.4rem 1fr; /* 1° linha com a altura de 11.4rem e a segunda com o tamanho restante que sobrar */
+
+
+    grid-template-areas: /* definindo onde cada elemento do layout vai ocupar a tela */
+    'header header'
+    'left right';
+}
+
+header {
+    grid-area: header;/* linkando ao template */
+}
+
+#bg {
+    grid-area: left; /* linkando ao template */
+
+    /*  top/contain -> diz ao elemento para se alinhar ao topo e se encaixar no elemento que ele está
+        top/cover -> se ajusta a div mas corta um pouco da imagem */
+    background: url(../assets/home-bg-img.svg) no-repeat top/contain;
+}
+
+main {
+    grid-area: right; /* linkando ao template */
+
+    display: flex;
+    align-items: center;
+}
+
+main .container {
+    width: min(36.3rem 100%); /* altura mínima com a função min*/
+}
+
+main h2 {
+    font: 700 clamp(20px, 5vw, 2.8rem) 'Poppins', sans-serif; /* weight size family */
+    line-height: 4.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 2.4rem;
+}
+
+input {
+    border: 0.2rem solid var(--grey-blue);
+    padding: 0 1.6rem;
+    margin-bottom: 1.8rem;
+}
+
+input, button, .button {
+    width: 100%; /* 100% da largura do pai (.content) */
+}
+
+button {
+    margin-bottom: 4rem;
+}
