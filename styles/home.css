@@ -19,6 +19,7 @@ header {
     /*  top/contain -> diz ao elemento para se alinhar ao topo e se encaixar no elemento que ele está
         top/cover -> se ajusta a div mas corta um pouco da imagem */
     background: url(../assets/home-bg-img.svg) no-repeat top/contain;
+    background-position-x: -10rem;
 }
 
 main {
@@ -29,7 +30,7 @@ main {
 }
 
 main .container {
-    width: min(36.3rem 100%); /* altura mínima com a função min*/
+    width: min(36.3rem, 100%); /* altura mínima com a função min*/
 }
 
 main h2 {
@@ -42,11 +43,12 @@ main h2 {
 input {
     border: 0.2rem solid var(--grey-blue);
     padding: 0 1.6rem;
-    margin-bottom: 1.8rem;
+    outline: none;
 }
 
 input, button, .button {
     width: 100%; /* 100% da largura do pai (.content) */
+    margin-bottom: 1.8rem;
 }
 
 button {

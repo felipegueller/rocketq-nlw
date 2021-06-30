@@ -33,6 +33,7 @@ html {
 }
 
 body {
+    display: flex;
     height: 100vh; /*view height -> ocupa 100% do tamanho da tela (não é indicado para telas com rolagem)*/
     background-color: var(--background);
 }
@@ -86,6 +87,7 @@ button, .button {
 
     background-color: var(--blue);
     color: var(--white);
+    
     transition: filter 200ms;
 
     cursor: pointer;
