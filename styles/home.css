@@ -54,3 +54,50 @@ input, button, .button {
 button {
     margin-bottom: 4rem;
 }
+
+/* Separator Line */
+.separator {
+    margin: 4rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.separator div:nth-child(2) {
+    margin: 0 1.35rem;
+    color: var(--grey-blue);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 0;
+}
+
+.separator div:nth-child(1),
+.separator div:nth-child(3) {
+    background-color: var(--grey-blue);
+    width: 100%;
+    height: .1rem;
+}
+
+/* Create balls */
+.ball {
+    background-color: var(--blue);
+    opacity: 0.1;
+
+    /* o position fixed fica por cima de todos os elementos */
+    position: fixed;
+    clip-path: circle(); /* cria um círculo */
+}
+
+.ball.top {
+    height: 63.3rem;
+    width: 63.3rem;
+    top: -46rem;
+    right: -35rem;
+
+}
+
+.ball.bottom {
+    width: 21.2rem;
+    height: 21.2rem;
+    bottom: -15rem;
+    right: -3rem;
+}
